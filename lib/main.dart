@@ -33,22 +33,21 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      // home: const CategoriesScreen(), // no needs because we use intialRoute
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => const CategoriesScreen(),
-      //   CategoryMealsScreen.routeName: (context) => const CategoryMealsScreen(),
-      //   MealDetailScreen.routeName: (context) => const MealDetailScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const CategoriesScreen(),
+        CategoryMealsScreen.routeName: (context) => const CategoryMealsScreen(),
+        MealDetailScreen.routeName: (context) => const MealDetailScreen(),
+      },
+      // onGenerateRoute: (settings) {
+      //   print(settings.name);
+      //   return MaterialPageRoute(
+      //       builder: (context) => const CategoriesScreen());
       // },
-      onGenerateRoute: (settings) {
-        print(settings.name);
-        return MaterialPageRoute(
-            builder: (context) => const CategoriesScreen());
-      },
-      onUnknownRoute: (settings) {
-        return MaterialPageRoute(
-            builder: (context) => const CategoriesScreen());
-      },
+      // onUnknownRoute: (settings) {
+      //   return MaterialPageRoute(
+      //       builder: (context) => const CategoriesScreen());
+      // },
     );
   }
 }
