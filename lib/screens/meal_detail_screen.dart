@@ -37,7 +37,7 @@ class MealDetailScreen extends StatelessWidget {
     final selectedMeal =
         dummyMeals.firstWhere((element) => element.id == mealId);
     return Scaffold(
-      appBar: AppBar(title: Text('${selectedMeal.title}')),
+      appBar: AppBar(title: Text(selectedMeal.title)),
       body: Center(
         child: ListView(
           children: [
@@ -73,8 +73,8 @@ class MealDetailScreen extends StatelessWidget {
                   children: [
                     ListTile(
                       leading: CircleAvatar(
-                        child: Text('# ${index + 1}'),
                         backgroundColor: Theme.of(context).colorScheme.primary,
+                        child: Text('# ${index + 1}'),
                       ),
                       title: Text(
                         selectedMeal.steps[index],
