@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+import 'package:meals_app/screens/categories_screen.dart';
+import 'package:meals_app/screens/favorite_screen.dart';
+
+class TabsScreen extends StatefulWidget {
+  const TabsScreen({Key? key}) : super(key: key);
+
+  @override
+  State<TabsScreen> createState() => _TabsScreenState();
+}
+
+class _TabsScreenState extends State<TabsScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      initialIndex: 0,
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Tony Meals'),
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                icon: Icon(Icons.category),
+                text: "Categories",
+              ),
+              Tab(
+                icon: Icon(Icons.star),
+                text: "Favorite",
+              )
+            ],
+          ),
+        ),
+        body: const TabBarView(
+          children: [
+            CategoriesScreen(),
+            FavoriteScreen(),
+          ],
+        ),
+      ),
+    );
+  }
+}
